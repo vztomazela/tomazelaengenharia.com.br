@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- TROQUE: seu nome no título e na descrição -->
+<title>Seu Nome | Engenheiro Ambiental</title>
+<meta name="description" content="Portfólio de Seu Nome, engenheiro ambiental com experiência em gestão ambiental, licenciamento e acompanhamento de obras.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f3ec; --surface:#fffdf8; --ink:#1d2a22; --muted:#5b685f;
+    --green:#1f5c3f; --green-soft:#e3ece4; --accent:#b8873b; --line:#ddd6c8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121914; --surface:#18221b; --ink:#e9eee8; --muted:#a3b0a6;
+      --green:#7fc39b; --green-soft:#203027; --accent:#d9ab62; --line:#2b3a30;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.65;font-size:17px}
+  a{color:var(--green)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .logo{font-family:Fraunces,serif;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+  .menu{display:flex;gap:22px;list-style:none}
+  .menu a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500}
+  .menu a:hover{color:var(--green)}
+
+  header.hero{padding:96px 0 72px}
+  .tag{display:inline-block;background:var(--green-soft);color:var(--green);font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:99px;margin-bottom:22px}
+  h1{font-family:Fraunces,serif;font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.08;font-weight:700;margin-bottom:20px}
+  h1 span{color:var(--green)}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:620px;margin-bottom:32px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem}
+  .btn.primary{background:var(--green);color:var(--bg)}
+  .btn.ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .btn:hover{opacity:.88}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .label{color:var(--accent);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  h2{font-family:Fraunces,serif;font-size:clamp(1.7rem,4vw,2.3rem);font-weight:700;margin-bottom:28px}
+  p + p{margin-top:14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .card h3{font-size:1.02rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.93rem}
+  .icon{width:38px;height:38px;border-radius:9px;background:var(--green-soft);color:var(--green);display:grid;place-items:center;margin-bottom:14px}
+
+  .job{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .job:last-child{border-bottom:none}
+  .when{color:var(--muted);font-size:.9rem;font-weight:500}
+  .job h3{font-size:1.1rem}
+  .job .co{color:var(--green);font-weight:600;font-size:.95rem;margin-bottom:10px}
+  .job ul{padding-left:18px;color:var(--muted)}
+  .job li{margin:4px 0}
+
+  .contact{display:flex;flex-wrap:wrap;gap:12px}
+  .contact a{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:500}
+  .contact a:hover{border-color:var(--green)}
+
+  footer{padding:32px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+  @media (max-width:640px){
+    .menu{display:none}
+    header.hero{padding:64px 0 48px}
+    .job{grid-template-columns:1fr;gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <!-- TROQUE: suas iniciais ou nome -->
+    <a href="#" class="logo">Seu Nome</a>
+    <ul class="menu">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#atuacao">Atuação</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Engenharia Ambiental</span>
+    <!-- TROQUE: seu nome -->
+    <h1>Olá, sou <span>Seu Nome</span>.<br>Engenheiro Ambiental.</h1>
+    <p class="lead">Gestão ambiental, licenciamento e acompanhamento de obras na construção civil, unindo conformidade legal e eficiência no uso de recursos.</p>
+    <div class="btns">
+      <a href="#contato" class="btn primary">Entre em contato</a>
+      <!-- Opcional: coloque um arquivo curriculo.pdf no repositório para este botão funcionar -->
+      <a href="curriculo.pdf" class="btn ghost">Baixar currículo</a>
+    </div>
+  </div>
+</header>
+
+<section id="sobre">
+  <div class="wrap">
+    <p class="label">Sobre</p>
+    <h2>Quem sou</h2>
+    <!-- TROQUE: escreva com suas palavras -->
+    <p>Sou engenheiro ambiental com experiência na construção civil de alto padrão, atuando em obras de galpões e edifícios. Trabalho na interface entre a engenharia e o meio ambiente: licenciamento, controle ambiental de canteiros e gestão de matérias-primas.</p>
+    <p>Busco soluções que mantenham as obras em conformidade com a legislação ambiental, reduzam desperdícios e minimizem impactos, sem comprometer prazos e custos.</p>
+  </div>
+</section>
+
+<section id="atuacao">
+  <div class="wrap">
+    <p class="label">Áreas de atuação</p>
+    <h2>O que eu faço</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
+        <h3>Licenciamento ambiental</h3>
+        <p>Elaboração e acompanhamento de processos junto aos órgãos ambientais.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></div>
+        <h3>Gestão ambiental</h3>
+        <p>Programas de controle, resíduos da construção civil e indicadores ambientais.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg></div>
+        <h3>Acompanhamento de obras</h3>
+        <p>Fiscalização ambiental de canteiros em galpões e edifícios.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
+        <h3>Gestão de matérias-primas</h3>
+        <p>Controle de insumos, rastreabilidade e redução de desperdícios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <p class="label">Trajetória</p>
+    <h2>Experiência profissional</h2>
+
+    <!-- Para adicionar outro emprego, copie um bloco <div class="job">...</div> inteiro -->
+    <div class="job">
+      <div class="when">jan/2016 – dez/2019</div>
+      <div>
+        <h3>Engenheiro Ambiental</h3>
+        <div class="co">ENCELO Engenharia LTDA</div>
+        <ul>
+          <li>Gestão ambiental de obras de construção civil de alto padrão (galpões e edifícios)</li>
+          <li>Condução de processos de licenciamento ambiental</li>
+          <li>Acompanhamento ambiental das obras em campo</li>
+          <li>Gestão de matérias-primas e insumos</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EXEMPLO de outro emprego (apague os sinais de comentário para usar)
+    <div class="job">
+      <div class="when">2020 – atual</div>
+      <div>
+        <h3>Cargo</h3>
+        <div class="co">Empresa</div>
+        <ul>
+          <li>Atividade principal</li>
+        </ul>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+
+<section id="formacao">
+  <div class="wrap">
+    <p class="label">Formação</p>
+    <h2>Formação acadêmica</h2>
+    <div class="grid">
+      <!-- TROQUE: sua instituição e ano -->
+      <div class="card">
+        <h3>Engenharia Ambiental</h3>
+        <p>Nome da Instituição · Ano de conclusão</p>
+      </div>
+      <!-- TROQUE ou apague: cursos, especializações, registro no CREA -->
+      <div class="card">
+        <h3>Registro profissional</h3>
+        <p>CREA-SP nº 000000000</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <p class="label">Contato</p>
+    <h2>Vamos conversar</h2>
+    <p style="color:var(--muted);margin-bottom:24px">Aberto a oportunidades, consultorias e parcerias.</p>
+    <div class="contact">
+      <!-- TROQUE: seu e-mail -->
+      <a href="mailto:seuemail@exemplo.com">✉️ seuemail@exemplo.com</a>
+      <!-- TROQUE: seu número com DDI e DDD, só números (ex.: 5515999999999) -->
+      <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <!-- TROQUE: link do seu LinkedIn -->
+      <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Seu Nome · Engenheiro Ambiental</div>
+</footer>
+
+</body>
+</html>
