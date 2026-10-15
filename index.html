@@ -3,221 +3,394 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- TROQUE: seu nome no título e na descrição -->
-<title>Seu Nome | Engenheiro Ambiental</title>
-<meta name="description" content="Portfólio de Seu Nome, engenheiro ambiental com experiência em gestão ambiental, licenciamento e acompanhamento de obras.">
+<title>Vitor Tomazela | Engenharia Ambiental, Civil e Segurança do Trabalho</title>
+<meta name="author" content="Vitor Zampaulo Tomazela">
+<meta name="description" content="Portfólio de Vitor Zampaulo Tomazela, engenheiro ambiental e de segurança do trabalho em Piracicaba-SP. Licenciamento ambiental, PGRS, PRAD, ISO 14001 e acompanhamento de obras.">
+<meta property="og:title" content="Vitor Tomazela | Tomazela Engenharia">
+<meta property="og:description" content="Engenharia ambiental, civil e segurança do trabalho. Licenciamento, gestão ambiental e acompanhamento de obras.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f3ec; --surface:#fffdf8; --ink:#1d2a22; --muted:#5b685f;
-    --green:#1f5c3f; --green-soft:#e3ece4; --accent:#b8873b; --line:#ddd6c8;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#121914; --surface:#18221b; --ink:#e9eee8; --muted:#a3b0a6;
-      --green:#7fc39b; --green-soft:#203027; --accent:#d9ab62; --line:#2b3a30;
-    }
+    --bg:#f7f5f0; --bg-alt:#efebe3; --surface:#ffffff;
+    --ink:#1c2420; --muted:#66706a; --line:#ddd7cb;
+    --green:#2c5a43; --green-dark:#1d3d2d; --sand:#b39467;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.65;font-size:17px}
-  a{color:var(--green)}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:400;line-height:1.7;font-size:16px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif}
+  .eyebrow{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:500}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2rem,4.5vw,3rem);line-height:1.15;margin:10px 0 22px}
 
-  nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-  .logo{font-family:Fraunces,serif;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
-  .menu{display:flex;gap:22px;list-style:none}
-  .menu a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500}
-  .menu a:hover{color:var(--green)}
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+  nav.solid{background:rgba(247,245,240,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{letter-spacing:.32em;font-size:.86rem;font-weight:600;color:var(--ink);text-decoration:none}
+  .links{display:flex;gap:34px;list-style:none}
+  .links a{color:var(--ink);text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+  .links a:hover{opacity:1;color:var(--green)}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:1.5px;background:var(--ink);margin:5px 0}
 
-  header.hero{padding:96px 0 72px}
-  .tag{display:inline-block;background:var(--green-soft);color:var(--green);font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:99px;margin-bottom:22px}
-  h1{font-family:Fraunces,serif;font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.08;font-weight:700;margin-bottom:20px}
-  h1 span{color:var(--green)}
-  .lead{font-size:1.15rem;color:var(--muted);max-width:620px;margin-bottom:32px}
-  .btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem}
-  .btn.primary{background:var(--green);color:var(--bg)}
-  .btn.ghost{border:1.5px solid var(--line);color:var(--ink)}
-  .btn:hover{opacity:.88}
+  /* HERO */
+  .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px;padding-top:96px;padding-bottom:56px}
+  .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.03;margin:18px 0 26px}
+  .hero h1 em{color:var(--green);font-style:italic}
+  .hero p{color:var(--muted);max-width:500px;font-size:1.05rem;margin-bottom:36px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:.25s}
+  .btn.dark{background:var(--green-dark);color:#fff}
+  .btn.dark:hover{background:var(--green)}
+  .btn.line{border:1px solid var(--ink);color:var(--ink)}
+  .btn.line:hover{background:var(--ink);color:#fff}
+  .portrait{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#cfd8cf,#8fa597)}
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .portrait .initials{position:absolute;inset:0;display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:7rem;color:rgba(255,255,255,.75)}
+  .portrait::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--sand);z-index:-1}
 
-  section{padding:64px 0;border-top:1px solid var(--line)}
-  .label{color:var(--accent);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-  h2{font-family:Fraunces,serif;font-size:clamp(1.7rem,4vw,2.3rem);font-weight:700;margin-bottom:28px}
-  p + p{margin-top:14px}
+  /* NÚMEROS */
+  .stats{background:var(--green-dark);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:40px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:2.8rem;line-height:1}
+  .stat span{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
-  .card h3{font-size:1.02rem;margin-bottom:6px}
-  .card p{color:var(--muted);font-size:.93rem}
-  .icon{width:38px;height:38px;border-radius:9px;background:var(--green-soft);color:var(--green);display:grid;place-items:center;margin-bottom:14px}
+  section{padding:110px 0}
+  .alt{background:var(--bg-alt)}
 
-  .job{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
-  .job:last-child{border-bottom:none}
-  .when{color:var(--muted);font-size:.9rem;font-weight:500}
-  .job h3{font-size:1.1rem}
-  .job .co{color:var(--green);font-weight:600;font-size:.95rem;margin-bottom:10px}
-  .job ul{padding-left:18px;color:var(--muted)}
+  /* SOBRE */
+  .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+  .about p{color:var(--muted);margin-bottom:18px}
+  .sign{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:2rem;color:var(--green);margin-top:12px}
+  .creds{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+  .creds span{border:1px solid var(--line);padding:7px 14px;font-size:.8rem;color:var(--ink);background:var(--surface)}
+
+  /* ÁREAS */
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
+  .area{background:var(--bg);padding:38px 32px;transition:background .25s}
+  .area:hover{background:var(--surface)}
+  .area .n{font-family:"Cormorant Garamond",serif;color:var(--sand);font-size:1.1rem}
+  .area h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.5rem;margin:8px 0 10px;line-height:1.2}
+  .area p{color:var(--muted);font-size:.93rem}
+
+  /* PROJETOS */
+  .head-row{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+  .head-row p{color:var(--muted);max-width:420px}
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .proj{cursor:pointer;background:none;border:0;text-align:left;font:inherit;color:inherit}
+  .proj .img{aspect-ratio:16/11;overflow:hidden;position:relative;background:var(--c)}
+  .proj .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .proj .img svg{position:absolute;inset:0;margin:auto;width:64px;height:64px;color:rgba(255,255,255,.55)}
+  .proj:hover .img img{transform:scale(1.04)}
+  .proj .meta{display:flex;justify-content:space-between;align-items:baseline;padding:18px 2px 0;gap:12px}
+  .proj h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.55rem;line-height:1.2}
+  .proj small{color:var(--muted);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+  .proj .more{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-top:6px;display:inline-block}
+
+  /* MODAL */
+  dialog{border:0;padding:0;max-width:760px;width:calc(100% - 32px);background:var(--surface);color:var(--ink);margin:auto}
+  dialog::backdrop{background:rgba(20,28,24,.6)}
+  .m-img{aspect-ratio:16/8;background:var(--c);position:relative}
+  .m-img img{width:100%;height:100%;object-fit:cover}
+  .m-body{padding:34px 36px 40px}
+  .m-body h3{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:500;margin:6px 0 20px}
+  .m-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:34px}
+  .m-body h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:10px;font-weight:600}
+  .m-body p,.m-body li{color:var(--muted);font-size:.93rem}
+  .m-body ul{padding-left:18px}
+  .m-body dl div{padding:8px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+  .m-body dt{color:var(--muted);font-size:.76rem}
+  .close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);cursor:pointer;font-size:1.3rem;z-index:2}
+
+  /* TRAJETÓRIA */
+  .timeline{border-left:1px solid var(--line);margin-left:6px}
+  .job{position:relative;padding:0 0 46px 38px}
+  .job::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg-alt);border:2px solid var(--green)}
+  .job .when{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);font-weight:500}
+  .job h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.65rem;line-height:1.2;margin:4px 0 2px}
+  .job .role{font-size:.9rem;color:var(--green);font-weight:500;margin-bottom:10px}
+  .job p.desc{color:var(--muted);font-size:.93rem;margin-bottom:8px}
+  .job ul{padding-left:18px;color:var(--muted);font-size:.93rem}
   .job li{margin:4px 0}
 
-  .contact{display:flex;flex-wrap:wrap;gap:12px}
-  .contact a{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:500}
-  .contact a:hover{border-color:var(--green)}
+  /* FORMAÇÃO */
+  .edu{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+  .course{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:110px 1fr;gap:18px}
+  .course .y{font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--green)}
+  .course .y small{display:block;font-family:Inter,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}
+  .course h3{font-size:1rem;font-weight:600;line-height:1.4}
+  .course p{color:var(--muted);font-size:.86rem}
+  .tools{margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .tools h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{background:var(--surface);border:1px solid var(--line);padding:6px 13px;font-size:.84rem}
 
-  footer{padding:32px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+  /* CONTATO */
+  .contact{background:var(--green-dark);color:#fff;text-align:center}
+  .contact h2{color:#fff}
+  .contact p.lead{opacity:.75;max-width:540px;margin:0 auto 40px}
+  .contact .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);max-width:900px;margin:0 auto}
+  .contact a.card{background:var(--green-dark);padding:34px 20px;color:#fff;text-decoration:none;transition:background .25s}
+  .contact a.card:hover{background:#25503a}
+  .contact .card small{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:6px}
+  .contact .card span{font-size:1rem;word-break:break-word}
+  .contact .btn{margin-top:44px;background:#fff;color:var(--green-dark)}
 
+  footer{background:#16231c;color:rgba(255,255,255,.55);font-size:.8rem;padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  .wa{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.2);z-index:40}
+  .wa svg{width:28px;height:28px;fill:#fff}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .hero,.about{grid-template-columns:1fr;gap:44px}
+    .hero{min-height:auto;padding-top:120px}
+    .portrait{max-width:420px}
+    .areas{grid-template-columns:1fr 1fr}
+    .edu,.tools{grid-template-columns:1fr}
+    .stats .wrap{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+  }
   @media (max-width:640px){
-    .menu{display:none}
-    header.hero{padding:64px 0 48px}
-    .job{grid-template-columns:1fr;gap:6px}
+    .links{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line)}
+    .links.open{display:flex}
+    .links a{display:block;padding:16px 24px}
+    .burger{display:block}
+    nav{background:rgba(247,245,240,.96)}
+    section{padding:76px 0}
+    .areas,.projects,.contact .cards{grid-template-columns:1fr}
+    .m-grid{grid-template-columns:1fr;gap:22px}
+    .m-body{padding:26px 22px 30px}
+    .course{grid-template-columns:86px 1fr}
   }
 </style>
 </head>
 <body>
 
-<nav>
+<nav id="nav">
   <div class="wrap">
-    <!-- TROQUE: suas iniciais ou nome -->
-    <a href="#" class="logo">Seu Nome</a>
-    <ul class="menu">
+    <a href="#inicio" class="brand">VITOR TOMAZELA</a>
+    <button class="burger" aria-label="Abrir menu" onclick="document.querySelector('.links').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <ul class="links" onclick="this.classList.remove('open')">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#atuacao">Atuação</a></li>
-      <li><a href="#experiencia">Experiência</a></li>
-      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="trajetoria.html">Trajetória</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="tag">Engenharia Ambiental</span>
-    <!-- TROQUE: seu nome -->
-    <h1>Olá, sou <span>Seu Nome</span>.<br>Engenheiro Ambiental.</h1>
-    <p class="lead">Gestão ambiental, licenciamento e acompanhamento de obras na construção civil, unindo conformidade legal e eficiência no uso de recursos.</p>
-    <div class="btns">
-      <a href="#contato" class="btn primary">Entre em contato</a>
-      <!-- Opcional: coloque um arquivo curriculo.pdf no repositório para este botão funcionar -->
-      <a href="curriculo.pdf" class="btn ghost">Baixar currículo</a>
+<!-- ============ INÍCIO ============ -->
+<header id="inicio" class="wrap hero">
+  <div>
+    <span class="eyebrow">Engenharia Ambiental · Civil · Segurança do Trabalho</span>
+    <h1>Obras e empresas em <em>conformidade</em>, com responsabilidade ambiental.</h1>
+    <p>Sou Vitor Zampaulo Tomazela, engenheiro em Piracicaba-SP. Atuo em licenciamento ambiental, gestão de resíduos, segurança do trabalho e acompanhamento de obras.</p>
+    <div class="cta">
+      <a href="#projetos" class="btn dark">Ver trabalhos</a>
+      <a href="https://wa.me/5515997297499" target="_blank" rel="noopener" class="btn line">Falar comigo</a>
     </div>
+  </div>
+  <!-- FOTO: envie sua foto para o repositório com o nome foto.jpg (formato vertical) -->
+  <div class="portrait">
+    <div class="initials">VT</div>
+    <img src="foto.jpg" alt="Vitor Zampaulo Tomazela" onerror="this.remove()">
   </div>
 </header>
 
+<!-- ============ NÚMEROS ============ -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>10+</b><span>anos de atuação</span></div>
+    <div class="stat"><b>3</b><span>engenharias</span></div>
+    <div class="stat"><b>4</b><span>especializações</span></div>
+    <div class="stat"><b>CREA</b><span>SP 5069807254</span></div>
+  </div>
+</div>
+
+<!-- ============ SOBRE ============ -->
 <section id="sobre">
-  <div class="wrap">
-    <p class="label">Sobre</p>
-    <h2>Quem sou</h2>
-    <!-- TROQUE: escreva com suas palavras -->
-    <p>Sou engenheiro ambiental com experiência na construção civil de alto padrão, atuando em obras de galpões e edifícios. Trabalho na interface entre a engenharia e o meio ambiente: licenciamento, controle ambiental de canteiros e gestão de matérias-primas.</p>
-    <p>Busco soluções que mantenham as obras em conformidade com a legislação ambiental, reduzam desperdícios e minimizem impactos, sem comprometer prazos e custos.</p>
-  </div>
-</section>
-
-<section id="atuacao">
-  <div class="wrap">
-    <p class="label">Áreas de atuação</p>
-    <h2>O que eu faço</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
-        <h3>Licenciamento ambiental</h3>
-        <p>Elaboração e acompanhamento de processos junto aos órgãos ambientais.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></div>
-        <h3>Gestão ambiental</h3>
-        <p>Programas de controle, resíduos da construção civil e indicadores ambientais.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg></div>
-        <h3>Acompanhamento de obras</h3>
-        <p>Fiscalização ambiental de canteiros em galpões e edifícios.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
-        <h3>Gestão de matérias-primas</h3>
-        <p>Controle de insumos, rastreabilidade e redução de desperdícios.</p>
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow">Sobre</span>
+      <h2>Engenharia que une técnica, legislação e campo.</h2>
+    </div>
+    <div class="reveal">
+      <p>Desde 2016 atuo na interface entre engenharia, meio ambiente e segurança do trabalho. Minha trajetória começou em canteiros de obras de residências de alto padrão, galpões e edifícios. Lá aprendi que conformidade ambiental e eficiência de obra andam juntas.</p>
+      <p>À frente da Tomazela Engenharia, conduzo processos de licenciamento junto ao IBAMA e aos órgãos estaduais, controlo condicionantes e elaboro relatórios técnicos e ARTs. Em consultorias de segurança do trabalho, implantei Planos de Gerenciamento de Resíduos Sólidos, programas de monitoramento ambiental e regularizações junto ao Corpo de Bombeiros e à Vigilância Sanitária.</p>
+      <p>Hoje somo à formação ambiental a Engenharia Civil e especializações em estruturas de concreto e saneamento básico. O objetivo é oferecer uma visão completa do empreendimento, do projeto à operação.</p>
+      <div class="sign">Vitor Tomazela</div>
+      <div class="creds">
+        <span>Eng. Ambiental e Sanitário</span>
+        <span>Eng. Civil</span>
+        <span>Eng. de Segurança do Trabalho</span>
+        <span>Habilitação A e B</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="experiencia">
+<!-- ============ ÁREAS DE ATUAÇÃO ============ -->
+<section id="atuacao" class="alt">
   <div class="wrap">
-    <p class="label">Trajetória</p>
-    <h2>Experiência profissional</h2>
+    <span class="eyebrow">Atuação</span>
+    <h2>Como posso ajudar</h2>
+    <div class="areas reveal">
+      <div class="area"><span class="n">01</span><h3>Licenciamento ambiental</h3><p>Processos junto ao IBAMA e aos órgãos estaduais, controle de condicionantes e relatórios periódicos para os órgãos fiscalizadores.</p></div>
+      <div class="area"><span class="n">02</span><h3>Gestão de resíduos (PGRS)</h3><p>Plano de Gerenciamento de Resíduos Sólidos, da segregação na fonte à destinação final certificada.</p></div>
+      <div class="area"><span class="n">03</span><h3>Recuperação de áreas (PRAD)</h3><p>Projetos de recuperação de áreas degradadas, reflorestamento e diagnósticos ambientais em campo.</p></div>
+      <div class="area"><span class="n">04</span><h3>Segurança do trabalho</h3><p>Programas de segurança, adequação às normas regulamentadoras e regularização junto ao Corpo de Bombeiros e à Vigilância Sanitária.</p></div>
+      <div class="area"><span class="n">05</span><h3>Gestão ambiental e ISO 14001</h3><p>Apoio na implantação de Sistemas de Gestão Ambiental, monitoramento de emissões e indicadores de impacto.</p></div>
+      <div class="area"><span class="n">06</span><h3>Obras e engenharia civil</h3><p>Acompanhamento da execução de obras e gestão de matérias-primas e insumos, com relatórios de consumo para compras.</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Para adicionar outro emprego, copie um bloco <div class="job">...</div> inteiro -->
-    <div class="job">
-      <div class="when">jan/2016 – dez/2019</div>
+<!-- ============ PROJETOS ============
+  Para colocar FOTOS: envie as imagens para o repositório (ex.: projeto1.jpg)
+  e troque o atributo data-img="" pelo nome do arquivo, ex.: data-img="projeto1.jpg".
+  Os textos de cada projeto ficam no final do arquivo, na lista "PROJETOS".
+-->
+<section id="projetos">
+  <div class="wrap">
+    <div class="head-row">
+      <div><span class="eyebrow">Portfólio</span><h2 style="margin-bottom:0">Trabalhos selecionados</h2></div>
+      <p>Uma amostra das frentes em que atuei. Clique em cada trabalho para ver o desafio e o que foi feito.</p>
+    </div>
+    <div class="projects" id="projects"></div>
+  </div>
+</section>
+
+<dialog id="modal">
+  <button class="close" aria-label="Fechar" onclick="modal.close()">×</button>
+  <div class="m-img" id="m-img"></div>
+  <div class="m-body">
+    <span class="eyebrow" id="m-cat"></span>
+    <h3 id="m-title"></h3>
+    <div class="m-grid">
       <div>
-        <h3>Engenheiro Ambiental</h3>
-        <div class="co">ENCELO Engenharia LTDA</div>
-        <ul>
-          <li>Gestão ambiental de obras de construção civil de alto padrão (galpões e edifícios)</li>
-          <li>Condução de processos de licenciamento ambiental</li>
-          <li>Acompanhamento ambiental das obras em campo</li>
-          <li>Gestão de matérias-primas e insumos</li>
-        </ul>
+        <h4>O desafio</h4><p id="m-desafio" style="margin-bottom:22px"></p>
+        <h4>O que foi feito</h4><ul id="m-feito"></ul>
       </div>
+      <div><h4>Detalhes</h4><dl id="m-det"></dl></div>
     </div>
+  </div>
+</dialog>
 
-    <!-- EXEMPLO de outro emprego (apague os sinais de comentário para usar)
-    <div class="job">
-      <div class="when">2020 – atual</div>
-      <div>
-        <h3>Cargo</h3>
-        <div class="co">Empresa</div>
-        <ul>
-          <li>Atividade principal</li>
-        </ul>
-      </div>
+<!-- ============ CHAMADA PARA A TRAJETÓRIA ============ -->
+<section class="alt">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
+    <div class="reveal">
+      <span class="eyebrow">Currículo</span>
+      <h2 style="margin-bottom:8px">Trajetória e formação</h2>
+      <p style="color:var(--muted);max-width:520px">Experiência em consultoria ambiental, segurança do trabalho e construção civil desde 2016, com graduações em Engenharia Ambiental e Civil e quatro especializações.</p>
     </div>
-    -->
+    <a href="trajetoria.html" class="btn dark">Ver trajetória completa</a>
   </div>
 </section>
 
-<section id="formacao">
+<!-- ============ CONTATO ============ -->
+<section id="contato" class="contact">
   <div class="wrap">
-    <p class="label">Formação</p>
-    <h2>Formação acadêmica</h2>
-    <div class="grid">
-      <!-- TROQUE: sua instituição e ano -->
-      <div class="card">
-        <h3>Engenharia Ambiental</h3>
-        <p>Nome da Instituição · Ano de conclusão</p>
-      </div>
-      <!-- TROQUE ou apague: cursos, especializações, registro no CREA -->
-      <div class="card">
-        <h3>Registro profissional</h3>
-        <p>CREA-SP nº 000000000</p>
-      </div>
+    <span class="eyebrow">Contato</span>
+    <h2>Vamos conversar.</h2>
+    <p class="lead">Licenciamento, regularização ou acompanhamento de obra: todo projeto começa com uma conversa. Entre em contato para avaliarmos juntos a sua necessidade.</p>
+    <div class="cards">
+      <a class="card" href="https://wa.me/5515997297499" target="_blank" rel="noopener"><small>WhatsApp</small><span>(15) 99729-7499</span></a>
+      <a class="card" href="mailto:eng.tomazela@gmail.com"><small>E-mail</small><span>eng.tomazela@gmail.com</span></a>
+      <a class="card" href="https://www.google.com/maps/search/Piracicaba+SP" target="_blank" rel="noopener"><small>Localização</small><span>Piracicaba – SP</span></a>
     </div>
-  </div>
-</section>
-
-<section id="contato">
-  <div class="wrap">
-    <p class="label">Contato</p>
-    <h2>Vamos conversar</h2>
-    <p style="color:var(--muted);margin-bottom:24px">Aberto a oportunidades, consultorias e parcerias.</p>
-    <div class="contact">
-      <!-- TROQUE: seu e-mail -->
-      <a href="mailto:seuemail@exemplo.com">✉️ seuemail@exemplo.com</a>
-      <!-- TROQUE: seu número com DDI e DDD, só números (ex.: 5515999999999) -->
-      <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">💬 WhatsApp</a>
-      <!-- TROQUE: link do seu LinkedIn -->
-      <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener">🔗 LinkedIn</a>
-    </div>
+    <!-- Opcional: envie seu currículo em PDF com o nome curriculo.pdf -->
+    <a href="curriculo.pdf" class="btn" download>Baixar currículo</a>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">© 2026 Seu Nome · Engenheiro Ambiental</div>
+  <div class="wrap">
+    <span>© 2026 Vitor Zampaulo Tomazela · Tomazela Engenharia</span>
+    <span>CREA-SP 5069807254</span>
+  </div>
 </footer>
 
+<a class="wa" href="https://wa.me/5515997297499" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+/* ===== PROJETOS — edite os textos aqui =====
+   img: nome do arquivo da foto (deixe "" para usar a cor de fundo)
+   detalhes: troque "A informar" por dados reais (cidade, ano, porte) ou apague a linha */
+const PROJETOS = [
+  {
+    titulo:"Licenciamento ambiental de empreendimentos", cat:"Licenciamento", cor:"#3d6b54", img:"",
+    desafio:"Garantir a regularidade ambiental de empreendimentos de diferentes portes, cumprindo exigências do IBAMA e dos órgãos estaduais.",
+    feito:["Condução integral do processo de licenciamento","Controle de condicionantes ambientais","Relatórios periódicos aos órgãos fiscalizadores","Emissão de ARTs"],
+    detalhes:[["Empresa","Tomazela Engenharia"],["Órgãos","IBAMA e órgãos estaduais"],["Período","2016 – 2026"]]
+  },
+  {
+    titulo:"Plano de Gerenciamento de Resíduos Sólidos", cat:"Gestão de resíduos", cor:"#8a7550", img:"",
+    desafio:"Estruturar a gestão de resíduos de clientes, da geração à destinação final, com rastreabilidade e certificação.",
+    feito:["Elaboração e gestão do PGRS","Segregação na fonte e logística de destinação","Indicadores de impacto e monitoramento"],
+    detalhes:[["Empresa","Lidder Segurança do Trabalho"],["Período","2019 – 2026"]]
+  },
+  {
+    titulo:"Recuperação de áreas degradadas e reflorestamento", cat:"PRAD", cor:"#4f7a3a", img:"",
+    desafio:"Recuperar ecossistemas afetados e atender exigências legais de recomposição ambiental.",
+    feito:["Elaboração e execução de PRADs","Projetos de reflorestamento","Levantamentos de campo e diagnósticos ambientais"],
+    detalhes:[["Empresas","ENCELO Engenharia / Settha"],["Período","2016 – 2025"]]
+  },
+  {
+    titulo:"Acompanhamento de obras de alto padrão", cat:"Construção civil", cor:"#5e6670", img:"",
+    desafio:"Conciliar o ritmo da obra com controle ambiental e uso eficiente de materiais em residências, galpões e edifícios.",
+    feito:["Acompanhamento da execução em campo","Gestão e controle de matérias-primas","Relatórios de consumo para compras de insumos"],
+    detalhes:[["Empresa","ENCELO Engenharia"],["Tipologias","Residências, galpões e edifícios"],["Período","2016 – 2022"]]
+  }
+];
+
+const ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg>';
+const grid = document.getElementById('projects'), modal = document.getElementById('modal');
+const media = p => p.img ? `<img src="${p.img}" alt="${p.titulo}">` : ICON;
+
+PROJETOS.forEach((p,i)=>{
+  const b = document.createElement('button');
+  b.className='proj reveal';
+  b.innerHTML = `<div class="img" style="--c:${p.cor}">${media(p)}</div>
+    <div class="meta"><h3>${p.titulo}</h3><small>${p.cat}</small></div>
+    <span class="more">Ver detalhes →</span>`;
+  b.onclick = ()=>abrir(i);
+  grid.appendChild(b);
+});
+
+function abrir(i){
+  const p = PROJETOS[i];
+  const mi = document.getElementById('m-img');
+  mi.style.setProperty('--c',p.cor); mi.innerHTML = p.img ? media(p) : '';
+  document.getElementById('m-cat').textContent = p.cat;
+  document.getElementById('m-title').textContent = p.titulo;
+  document.getElementById('m-desafio').textContent = p.desafio;
+  document.getElementById('m-feito').innerHTML = p.feito.map(f=>`<li>${f}</li>`).join('');
+  document.getElementById('m-det').innerHTML = p.detalhes.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  modal.showModal();
+}
+modal.addEventListener('click',e=>{ if(e.target===modal) modal.close(); });
+
+const nav = document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40));
+
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>

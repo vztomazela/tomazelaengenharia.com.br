@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trajetória e Formação | Vitor Tomazela</title>
+<meta name="author" content="Vitor Zampaulo Tomazela">
+<meta name="description" content="Portfólio de Vitor Zampaulo Tomazela, engenheiro ambiental e de segurança do trabalho em Piracicaba-SP. Licenciamento ambiental, PGRS, PRAD, ISO 14001 e acompanhamento de obras.">
+<meta property="og:title" content="Vitor Tomazela | Tomazela Engenharia">
+<meta property="og:description" content="Engenharia ambiental, civil e segurança do trabalho. Licenciamento, gestão ambiental e acompanhamento de obras.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f5f0; --bg-alt:#efebe3; --surface:#ffffff;
+    --ink:#1c2420; --muted:#66706a; --line:#ddd7cb;
+    --green:#2c5a43; --green-dark:#1d3d2d; --sand:#b39467;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:400;line-height:1.7;font-size:16px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif}
+  .eyebrow{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:500}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2rem,4.5vw,3rem);line-height:1.15;margin:10px 0 22px}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+  nav.solid{background:rgba(247,245,240,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{letter-spacing:.32em;font-size:.86rem;font-weight:600;color:var(--ink);text-decoration:none}
+  .links{display:flex;gap:34px;list-style:none}
+  .links a{color:var(--ink);text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+  .links a:hover{opacity:1;color:var(--green)}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:1.5px;background:var(--ink);margin:5px 0}
+
+  /* HERO */
+  .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px;padding-top:96px;padding-bottom:56px}
+  .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.03;margin:18px 0 26px}
+  .hero h1 em{color:var(--green);font-style:italic}
+  .hero p{color:var(--muted);max-width:500px;font-size:1.05rem;margin-bottom:36px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:.25s}
+  .btn.dark{background:var(--green-dark);color:#fff}
+  .btn.dark:hover{background:var(--green)}
+  .btn.line{border:1px solid var(--ink);color:var(--ink)}
+  .btn.line:hover{background:var(--ink);color:#fff}
+  .portrait{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#cfd8cf,#8fa597)}
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .portrait .initials{position:absolute;inset:0;display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:7rem;color:rgba(255,255,255,.75)}
+  .portrait::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--sand);z-index:-1}
+
+  /* NÚMEROS */
+  .stats{background:var(--green-dark);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:40px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:2.8rem;line-height:1}
+  .stat span{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+
+  section{padding:110px 0}
+  .alt{background:var(--bg-alt)}
+
+  /* SOBRE */
+  .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+  .about p{color:var(--muted);margin-bottom:18px}
+  .sign{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:2rem;color:var(--green);margin-top:12px}
+  .creds{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+  .creds span{border:1px solid var(--line);padding:7px 14px;font-size:.8rem;color:var(--ink);background:var(--surface)}
+
+  /* ÁREAS */
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
+  .area{background:var(--bg);padding:38px 32px;transition:background .25s}
+  .area:hover{background:var(--surface)}
+  .area .n{font-family:"Cormorant Garamond",serif;color:var(--sand);font-size:1.1rem}
+  .area h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.5rem;margin:8px 0 10px;line-height:1.2}
+  .area p{color:var(--muted);font-size:.93rem}
+
+  /* PROJETOS */
+  .head-row{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+  .head-row p{color:var(--muted);max-width:420px}
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .proj{cursor:pointer;background:none;border:0;text-align:left;font:inherit;color:inherit}
+  .proj .img{aspect-ratio:16/11;overflow:hidden;position:relative;background:var(--c)}
+  .proj .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .proj .img svg{position:absolute;inset:0;margin:auto;width:64px;height:64px;color:rgba(255,255,255,.55)}
+  .proj:hover .img img{transform:scale(1.04)}
+  .proj .meta{display:flex;justify-content:space-between;align-items:baseline;padding:18px 2px 0;gap:12px}
+  .proj h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.55rem;line-height:1.2}
+  .proj small{color:var(--muted);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+  .proj .more{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-top:6px;display:inline-block}
+
+  /* MODAL */
+  dialog{border:0;padding:0;max-width:760px;width:calc(100% - 32px);background:var(--surface);color:var(--ink);margin:auto}
+  dialog::backdrop{background:rgba(20,28,24,.6)}
+  .m-img{aspect-ratio:16/8;background:var(--c);position:relative}
+  .m-img img{width:100%;height:100%;object-fit:cover}
+  .m-body{padding:34px 36px 40px}
+  .m-body h3{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:500;margin:6px 0 20px}
+  .m-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:34px}
+  .m-body h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:10px;font-weight:600}
+  .m-body p,.m-body li{color:var(--muted);font-size:.93rem}
+  .m-body ul{padding-left:18px}
+  .m-body dl div{padding:8px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+  .m-body dt{color:var(--muted);font-size:.76rem}
+  .close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);cursor:pointer;font-size:1.3rem;z-index:2}
+
+  /* TRAJETÓRIA */
+  .timeline{border-left:1px solid var(--line);margin-left:6px}
+  .job{position:relative;padding:0 0 46px 38px}
+  .job::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg-alt);border:2px solid var(--green)}
+  .job .when{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);font-weight:500}
+  .job h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.65rem;line-height:1.2;margin:4px 0 2px}
+  .job .role{font-size:.9rem;color:var(--green);font-weight:500;margin-bottom:10px}
+  .job p.desc{color:var(--muted);font-size:.93rem;margin-bottom:8px}
+  .job ul{padding-left:18px;color:var(--muted);font-size:.93rem}
+  .job li{margin:4px 0}
+
+  /* FORMAÇÃO */
+  .edu{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+  .course{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:110px 1fr;gap:18px}
+  .course .y{font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--green)}
+  .course .y small{display:block;font-family:Inter,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}
+  .course h3{font-size:1rem;font-weight:600;line-height:1.4}
+  .course p{color:var(--muted);font-size:.86rem}
+  .tools{margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .tools h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{background:var(--surface);border:1px solid var(--line);padding:6px 13px;font-size:.84rem}
+
+  /* CONTATO */
+  .contact{background:var(--green-dark);color:#fff;text-align:center}
+  .contact h2{color:#fff}
+  .contact p.lead{opacity:.75;max-width:540px;margin:0 auto 40px}
+  .contact .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);max-width:900px;margin:0 auto}
+  .contact a.card{background:var(--green-dark);padding:34px 20px;color:#fff;text-decoration:none;transition:background .25s}
+  .contact a.card:hover{background:#25503a}
+  .contact .card small{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:6px}
+  .contact .card span{font-size:1rem;word-break:break-word}
+  .contact .btn{margin-top:44px;background:#fff;color:var(--green-dark)}
+
+  footer{background:#16231c;color:rgba(255,255,255,.55);font-size:.8rem;padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  .wa{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.2);z-index:40}
+  .wa svg{width:28px;height:28px;fill:#fff}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .hero,.about{grid-template-columns:1fr;gap:44px}
+    .hero{min-height:auto;padding-top:120px}
+    .portrait{max-width:420px}
+    .areas{grid-template-columns:1fr 1fr}
+    .edu,.tools{grid-template-columns:1fr}
+    .stats .wrap{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+  }
+  @media (max-width:640px){
+    .links{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line)}
+    .links.open{display:flex}
+    .links a{display:block;padding:16px 24px}
+    .burger{display:block}
+    nav{background:rgba(247,245,240,.96)}
+    section{padding:76px 0}
+    .areas,.projects,.contact .cards{grid-template-columns:1fr}
+    .m-grid{grid-template-columns:1fr;gap:22px}
+    .m-body{padding:26px 22px 30px}
+    .course{grid-template-columns:86px 1fr}
+  }
+</style>
+<style>
+  .page-head{padding:150px 0 30px}
+  .page-head h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.05;margin:14px 0 18px}
+  .page-head p{color:var(--muted);max-width:560px}
+  .back{display:inline-block;margin-bottom:26px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);text-decoration:none}
+  nav{background:rgba(247,245,240,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">VITOR TOMAZELA</a>
+    <button class="burger" aria-label="Abrir menu" onclick="document.querySelector('.links').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <ul class="links" onclick="this.classList.remove('open')">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="#trajetoria">Experiência</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap page-head">
+  <a href="index.html" class="back">← Voltar ao início</a><br>
+  <span class="eyebrow">Currículo</span>
+  <h1>Trajetória e formação</h1>
+  <p>Mais de dez anos de atuação em engenharia ambiental, segurança do trabalho e construção civil, com formação contínua nas três áreas.</p>
+</header>
+
+<!-- ============ TRAJETÓRIA ============ -->
+<section id="trajetoria" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Trajetória</span>
+    <h2>Experiência profissional</h2>
+    <div class="timeline">
+      <div class="job reveal">
+        <span class="when">jan/2016 – set/2026</span>
+        <h3>Tomazela Engenharia</h3>
+        <div class="role">Engenheiro Ambiental e de Segurança do Trabalho · Consultoria ambiental</div>
+        <p class="desc">Consultoria estratégica em sustentabilidade, com foco em conformidade regulatória ESG e otimização de processos ambientais.</p>
+        <ul>
+          <li>Gestão integral de licenciamentos ambientais junto ao IBAMA e órgãos estaduais</li>
+          <li>Controle de condicionantes e relatórios periódicos para órgãos fiscalizadores</li>
+          <li>Monitoramento de emissões atmosféricas e medidas mitigadoras de poluição</li>
+          <li>Elaboração de ARTs para licenciamento e projetos de engenharia ambiental</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <span class="when">mai/2025 – dez/2025</span>
+        <h3>Settha Saúde e Segurança do Trabalho</h3>
+        <div class="role">Engenheiro Ambiental e de Segurança do Trabalho</div>
+        <ul>
+          <li>Elaboração e execução de programas ambientais e PRADs</li>
+          <li>Apoio na implantação e manutenção de SGA baseado na ISO 14001</li>
+          <li>Medições ambientais em campo para o monitoramento legal</li>
+          <li>Adequação de processos às Boas Práticas de Fabricação e normas de sustentabilidade</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <span class="when">jan/2019 – jul/2026</span>
+        <h3>Lidder Segurança do Trabalho</h3>
+        <div class="role">Engenheiro Ambiental e de Segurança do Trabalho</div>
+        <ul>
+          <li>Gestão completa do PGRS, da segregação à destinação final certificada</li>
+          <li>Programas de monitoramento ambiental e indicadores de impacto</li>
+          <li>Licenciamento e regularização junto ao Corpo de Bombeiros e à Vigilância Sanitária</li>
+        </ul>
+      </div>
+      <div class="job reveal" style="padding-bottom:0">
+        <span class="when">jan/2016 – set/2022</span>
+        <h3>ENCELO Engenharia</h3>
+        <div class="role">Engenheiro Ambiental · Construção civil</div>
+        <ul>
+          <li>Projetos de reflorestamento e recuperação de ecossistemas</li>
+          <li>Regularização de empreendimentos e propriedades rurais junto ao IBAMA</li>
+          <li>Levantamentos de campo para diagnósticos e estudos de impacto ambiental</li>
+          <li>Acompanhamento de obras de residências de alto padrão, galpões e edifícios</li>
+          <li>Gestão de matérias-primas e relatórios de consumo para aquisição de insumos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMAÇÃO ============ -->
+<section id="formacao">
+  <div class="wrap">
+    <span class="eyebrow">Formação</span>
+    <h2>Formação acadêmica</h2>
+    <div class="edu">
+      <div class="course"><div class="y">2027<small>em curso</small></div><div><h3>Pós-graduação em Estruturas de Concreto Armado e Protendido</h3><p>IBEE – Instituto Brasileiro de Engenharia Estrutural</p></div></div>
+      <div class="course"><div class="y">2027<small>em curso</small></div><div><h3>Pós-graduação em Infraestrutura de Saneamento Básico</h3><p>EEP – Escola de Engenharia de Piracicaba</p></div></div>
+      <div class="course"><div class="y">2026</div><div><h3>Graduação em Engenharia Civil</h3><p>Universidade Cruzeiro do Sul</p></div></div>
+      <div class="course"><div class="y">2025</div><div><h3>Técnico em Segurança do Trabalho</h3><p>Grupo UNICORP – Educação e Desenvolvimento</p></div></div>
+      <div class="course"><div class="y">2018</div><div><h3>Pós-graduação em Engenharia de Segurança do Trabalho</h3><p>CEUNSP – Centro Universitário Nossa Senhora do Patrocínio</p></div></div>
+      <div class="course"><div class="y">2018</div><div><h3>Pós-graduação em Gerenciamento de Obras Civis e Arquitetura</h3><p>CEUNSP – Centro Universitário Nossa Senhora do Patrocínio</p></div></div>
+      <div class="course"><div class="y">2015</div><div><h3>Graduação em Engenharia Ambiental e Sanitária</h3><p>CEUNSP – Centro Universitário Nossa Senhora do Patrocínio</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" style="padding:90px 0">
+  <div class="wrap">
+    <span class="eyebrow">Contato</span>
+    <h2>Vamos conversar.</h2>
+    <p class="lead">Quer saber como posso contribuir com sua empresa ou obra?</p>
+    <a href="https://wa.me/5515997297499" target="_blank" rel="noopener" class="btn" style="margin-top:0">Falar no WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vitor Zampaulo Tomazela · Tomazela Engenharia</span>
+    <span>CREA-SP 5069807254</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5515997297499" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
